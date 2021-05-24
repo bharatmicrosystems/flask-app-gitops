@@ -12,6 +12,6 @@ jobs:
       run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops
     - name: Raise a Pull Request
       id: pull-request
-      uses: peter-evans/create-pull-request@v3
+      uses: repo-sync/pull-request@v2
       with:
-        branch: master
+        destination_branch: master
