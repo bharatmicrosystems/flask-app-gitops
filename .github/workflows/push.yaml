@@ -15,4 +15,4 @@ jobs:
       run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER  }}/flask-app-gitops:$(git rev-parse --short "$GITHUB_SHA")
     - name: Push the Docker image
       id: push
-      run: docker push ${{ secrets.DOCKER_USER  }}/flask-app-gitops
+      run: docker push ${{ secrets.DOCKER_USER  }}/flask-app-gitops:$(git rev-parse --short "$GITHUB_SHA")
